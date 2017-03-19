@@ -3,6 +3,10 @@ function Person(lastname, firstname) {
     this.firstname = firstname;
 }
 
-var foo = new Person("Foo", "Bar");
+Person.prototype.greet = function() {
+    console.log("This person is " + this.firstname + " " + this.lastname + "."); 
+};
 
-console.log("This person is " + foo.firstname + " " + foo.lastname + "."); 
+
+var foo = new Person("Foo", "Bar");
+console.log(foo.__proto__);
